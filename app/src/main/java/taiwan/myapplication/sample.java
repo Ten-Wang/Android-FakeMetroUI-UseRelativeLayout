@@ -29,7 +29,7 @@ public class sample extends HomeFragmentMetro {
         viewItem.tag = views.size();
         addViewItem(viewItem, -1);
 
-        View _view2 = layoutInflater.inflate(R.layout.grid_item, null);
+        View _view2 = layoutInflater.inflate(R.layout.metro_group_horizontalitem, null);
         RelativeLayout.LayoutParams layoutParams2 = getViewItemLayoutParams(1, itemWidth, itemHeight);
         layoutParams2.leftMargin = 1 * itemWidth;
         layoutParams2.topMargin = 1 * itemHeight;
@@ -44,6 +44,5 @@ public class sample extends HomeFragmentMetro {
     }
     @Override
     protected void onEnterEditMode(View v){
-        v.findViewById(R.id.delete).setVisibility(View.VISIBLE);
     }
 }

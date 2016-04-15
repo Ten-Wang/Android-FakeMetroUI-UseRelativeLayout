@@ -351,6 +351,20 @@ public class HomeFragmentMetro extends Fragment {
         }
         nowItem.view.setLeft(X - _xDelta);
         nowItem.view.setTop(Y - _yDelta);
+        if(nowItem.size == ViewItem.ItemSize.min) {
+            nowItem.view.setRight(X - _xDelta + itemWidth);
+            nowItem.view.setBottom(Y - _yDelta + itemHeight);
+        }else if(nowItem.size == ViewItem.ItemSize.mid_width) {
+            nowItem.view.setRight(X - _xDelta + itemWidth * 2);
+            nowItem.view.setBottom(Y - _yDelta + itemHeight);
+        }else if(nowItem.size == ViewItem.ItemSize.mid_height) {
+            nowItem.view.setRight(X - _xDelta + itemWidth);
+            nowItem.view.setBottom(Y - _yDelta + itemHeight * 2);
+        }else{
+            nowItem.view.setRight(X - _xDelta + itemWidth * 2);
+            nowItem.view.setBottom(Y - _yDelta + itemHeight * 2);
+        }
+
         int rootX = X / itemWidth;
         int rootY = (Y - statusBar - actionBar) / itemHeight;
         int index = clickItemPointIndex >= nowItem.positions.size() ? 0 : clickItemPointIndex;

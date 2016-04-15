@@ -1,0 +1,156 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="165dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
+
+    <RelativeLayout
+        android:id="@+id/fragment_metro_gridcell"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/metro_cell_background_green">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:background="@color/metro_cell_textcolor"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/relativeLayout3">
+
+            <TextView
+                android:id="@+id/tvGridItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description2"
+                android:textColor="@color/metro_device_description_textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="16dp" />
+            <!-- android:layout_marginRight="5dp"
+                               android:layout_marginBottom="2dp"-->
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/groupDialogBtn"
+                android:src="@drawable/ic_action_about"
+                android:background="#000000ff"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="32dp" />
+            <!-- TextView android:id="@+id/textView5" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="No lacation"
+                      android:textColor="@color/metro_device_description_textcolor"
+                      android:textSize="13sp"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginBottom="16dp"
+                      android:textAppearance="?android:attr/textAppearanceSmall"
+                      android:layout_below="@+id/tvGridItem"
+                      android:layout_alignStart="@+id/tvGridItem"
+                android:visibility="gone" / -->
+
+            <!-- ImageView
+                    android:id="@+id/fragment_metro_gridcell_resize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/resize" android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone"/ -->
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/fragment_metro_gridcell_delete"
+            android:layout_width="66px"
+            android:layout_height="66px"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/delete"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/fragment_metro_gridcell_pBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" />
+        <!-- TextView
+                android:id="@+id/fragment_mtero_tvgrid"
+                android:layout_width="wrap_content"
+                android:layout_height="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Description"
+                android:visibility="invisible"/ -->
+
+        <!--  android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="12dp"
+                        android:minHeight="3dp"
+                -->
+        <SeekBar
+            android:id="@+id/fragment_metro_seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:layout_marginLeft="10dp"
+            android:maxHeight="3dp"
+            android:max="100"
+            android:progressDrawable="@drawable/group_seekbar_style_green"
+            android:thumb="@drawable/thumb"
+            android:indeterminate="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignBottom="@+id/fragment_metro_gridcell_delete"
+            android:splitTrack="false"
+            android:thumbOffset="1dp" />
+
+        <TextView
+            android:id="@+id/sign_tViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON"
+            android:textColor="@color/cardUI"
+            android:textSize="20sp"
+            android:shadowColor="@color/metro_background_gray"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.5"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignWithParentIfMissing="false" />
+
+        <TextView
+            android:id="@+id/sign_tViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OFF"
+            android:textColor="@color/cardUI"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/fragment_metro_seekBar"
+            android:layout_above="@+id/relativeLayout3"
+            android:layout_alignParentStart="true"
+            android:shadowColor="@color/metro_background_gray"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.5"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

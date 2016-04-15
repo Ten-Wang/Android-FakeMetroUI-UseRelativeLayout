@@ -3,4 +3,76 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="list_getActionBar_title">#FFFFFF</color>
+    <color name="list_item_title">#FFFFFF</color>
+    <color name="list_background">#fff</color>
+    <color name="cardUI">#ffffff</color>
+
+    <color name="black">#000000</color>
+
+    <color name="metro_cell_background_cord_colorblue">#2196F3</color>
+    <color name="metro_cell_background_cord_color1">#ff4caf50</color>
+    <color name="metro_cell_background_cord_color1_transparent87">#ff70bf73</color>
+    <color name="metro_cell_background_cord_color2">#ffff4e1a</color>
+    <color name="metro_cell_background_cord_color2_transparent87">#ffff7148</color>
+    <color name="metro_cell_background_cord_color3">#ffffab40</color>
+    <color name="metro_cell_background_cord_color3_transparent87">#ffffbc66</color>
+    <color name="PSColorGreen">@color/metro_cell_background_cord_color1</color>
+    <color name="PSColorGreenTransparent87">@color/metro_cell_background_cord_color1_transparent87</color>
+    <color name="PSColorRed">@color/metro_cell_background_cord_color2</color>
+    <color name="PSColorRedTransparent87">@color/metro_cell_background_cord_color2_transparent87</color>
+    <color name="PSColorOrange">@color/metro_cell_background_cord_color3</color>
+    <color name="PSColorOrangeTransparent87">@color/metro_cell_background_cord_color3_transparent87</color>
+    <color name="PSColorBlue">#2196F3</color>
+    <color name="PSFilter">#424242</color>
+
+    <color name="list_item_titlebackground">@color/metro_cell_background_cord_color1</color>
+    <color name="list_slidemenutext">#de000000</color>
+    <color name="list_slidemenupic">#89000000</color>
+    <color name="list_slidemenutext_pressed">#ff388E3C</color>
+    <color name="list_divider">#1f000000</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+
+    <color name="list_item_text">#f2000000</color>
+    <color name="tab_bar_bg">#f2c8e6c9</color>
+    <color name="tab_bar_text_select">#ff388e3c</color>
+    <color name="tab_bar_text_unselect">#f2000000</color>
+    <color name="login_text">#aaaaaa</color>
+    <color name="icom_home_color">#ff12bf29</color>
+    <color name="icom_delete_color">#ff3b30</color>
+    <color name="icom_edit_color">#ff804512</color>
+    <color name="transparent">#00000000</color>
+    <color name="scenario_textcolor">#8a000000</color>
+    <color name="scenario_textcolor_pressed">#d1000000</color>
+    <color name="ima_black">#33000000</color>
+    <color name="ima_white">#DDffffff</color>
+    <color name="statusbar">#654caf50</color>
+
+    <color name="metro_cell_background_bodytext">#212121</color>
+    <color name="metro_cell_background_appbg">#E0E0E0</color>
+    <color name="mIndicator">#FF757575</color>
+
+    <color name="metro_cell_background_green">@color/metro_cell_background_cord_color1</color>
+    <color name="metro_cell_background_red">#ffBCAAA4</color>
+    <color name="metro_cell_background_Macro">#ff795548</color>
+    <color name="metro_cell_textcolor">#fffafafa</color>
+    <color name="metro_background_color">#fffafafa</color>
+    <color name="settings_background_color">#ffefeff4</color>
+    <color name="hint_foreground_holo_light">#808080</color>
+
+    <color name="home_macro">#ff795548</color>
+    <color name="metro_device_description_textcolor">#424242</color>
+    <color name="metro_background_gray">#1E1E1E1E</color>
+
+    <color name="primary">#009688</color>
+    <color name="primaryDark">#00796b</color>
+    <color name="accent">#eeff41</color>
+    <color name="accentLight">#F4FF81</color>
+
+    <color name="base">#eeff41</color>
+    <color name="highlight">#009688</color>
+    <color name="error">#ff3b30</color>
+
 </resources>
