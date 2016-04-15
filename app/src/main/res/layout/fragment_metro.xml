@@ -1,0 +1,16 @@
+<taiwan.myapplication.lib.MetroScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/fragment_Metro_relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+    </RelativeLayout>
+</taiwan.myapplication.lib.MetroScrollView>
