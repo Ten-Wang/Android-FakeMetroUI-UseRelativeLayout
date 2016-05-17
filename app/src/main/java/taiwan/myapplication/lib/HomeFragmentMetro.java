@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -739,5 +740,148 @@ public class HomeFragmentMetro extends Fragment {
         layoutParamsup.topMargin = startY * itemHeight;
         item.view.setLayoutParams(layoutParamsup);
         checkOverlap(item);
+    }
+
+
+    int startX = 0;
+    int startY = 0;
+    View.OnTouchListener zoom = new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            ViewItem item = (ViewItem) v.getTag();
+            switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_DOWN:
+                    startX = (int) event.getRawX();
+                    startY = (int) event.getRawY();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    RelativeLayout.LayoutParams lParam = (RelativeLayout.LayoutParams) item.view.getLayoutParams();
+                    int diffX = (int) (event.getRawX() - startX);
+                    int diffY = (int) (event.getRawY() - startY);
+                    lParam.width += diffX;
+                    lParam.height += diffY;
+
+                    if (lParam.width > itemWidth * 2) {
+                        lParam.width = itemWidth * 2;
+                    } else if (lParam.width < itemWidth) {
+                        lParam.width = itemWidth;
+                    }
+
+                    if (lParam.height > itemHeight * 2) {
+                        lParam.height = itemHeight * 2;
+                    } else if (lParam.height < itemHeight) {
+                        lParam.height = itemHeight;
+                    }
+
+                    item.view.setLayoutParams(lParam);
+                    startX = (int) event.getRawX();
+                    startY = (int) event.getRawY();
+
+                    int indexX = ((int) event.getRawX() / itemWidth);
+                    int indexY = ((((int) event.getRawY() - statusBar - actionBar) / itemHeight));
+                    setPositionWhenZoom(item, indexX, indexY);
+                    break;
+            }
+            return true;
+        }
+    };
+
+    private void setPositionWhenZoom(ViewItem item, int X, int Y) {
+        int x = item.positions.get(0).X;
+        int y = item.positions.get(0).Y;
+        switch (item.size) {
+            case min:
+                try {
+                    if (item.positions.get(0).X < X && item.positions.get(0).Y == Y) {
+                        setmid_width(item, x, y);
+                    } else if (item.positions.get(0).X == X && item.positions.get(0).Y < Y) {
+                        setmid_height(item, x, y);
+                    } else if (item.positions.get(0).X < X && item.positions.get(0).Y < Y) {
+                        setmax(item, x, y);
+                    }
+                } catch (Exception e) {
+                    Log.e("ERROR", e.toString());
+                }
+
+                break;
+            case mid_width:
+                try {
+                    if (X < item.positions.get(1).X && item.positions.get(1).Y == Y) {
+                        setmin(item, x, y);
+                    } else if (item.positions.get(1).X == X && item.positions.get(1).Y < Y) {
+                        setmax(item, x, y);
+                    } else if (X < item.positions.get(1).X && item.positions.get(1).Y < Y) {
+                        setmid_height(item, x, y);
+                    }
+                } catch (Exception e) {
+                    Log.e("ERROR", e.toString());
+                }
+
+                break;
+            case mid_height:
+                try {
+                    if (item.positions.get(1).X == X && Y < item.positions.get(1).Y) {
+                        setmin(item, x, y);
+                    } else if (item.positions.get(1).X < X && item.positions.get(1).Y == Y) {
+                        setmax(item, x, y);
+                    } else if (item.positions.get(1).X < X && Y < item.positions.get(1).Y) {
+                        setmid_width(item, x, y);
+                    }
+                } catch (Exception e) {
+                    Log.e("ERROR", e.toString());
+                }
+
+                break;
+            case max:
+                try {
+                    if (X < item.positions.get(3).X && Y < item.positions.get(3).Y) {
+                        setmin(item, x, y);
+                    } else if (X < item.positions.get(3).X && item.positions.get(3).Y == Y) {
+                        setmid_height(item, x, y);
+                    } else if (item.positions.get(3).X == X && item.positions.get(3).Y < Y) {
+                        setmid_width(item, x, y);
+                    }
+                } catch (Exception e) {
+                    Log.e("ERROR", e.toString());
+                }
+
+                break;
+
+            default:
+                break;
+        }
+        updateScreenPosition();
+        checkOverlap(item);
+    }
+
+    private void setmin(ViewItem item, int x, int y) {
+        Log.i("chauster", "min (" + x + "," + y + ")");
+        item.setPositions(new int[]{x, y});
+        item.size = ViewItem.ItemSize.min;
+    }
+
+    private void setmid_width(ViewItem item, int x, int y) {
+        Log.i("chauster", "mid_width (" + x + "," + y + ")");
+
+        item.setPositions(new int[]{x, y}, new int[]{x + 1, y});
+        item.size = ViewItem.ItemSize.mid_width;
+    }
+
+    private void setmid_height(ViewItem item, int x, int y) {
+        Log.i("chauster", "mid_height (" + x + "," + y + ")");
+
+        item.setPositions(new int[]{x, y}, new int[]{x, y + 1});
+        item.size = ViewItem.ItemSize.mid_height;
+    }
+
+    private void setmax(ViewItem item, int x, int y) {
+        Log.i("chauster", "max (" + x + "," + y + ")");
+
+        item.setPositions(new int[]{x, y}, new int[]{x + 1, y}, new int[]{x, y + 1},
+                new int[]{x + 1, y + 1});
+        item.size = ViewItem.ItemSize.max;
     }
 }

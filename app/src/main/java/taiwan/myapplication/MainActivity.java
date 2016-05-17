@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
     void addFragment() {
         // Instantiate a new fragment.
-        sample newFragment = new sample();
+        Sample newFragment = new Sample();
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.fragment_container, newFragment, "first");
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

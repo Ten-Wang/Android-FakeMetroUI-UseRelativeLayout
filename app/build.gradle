@@ -17,29 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-<<<<<<< HEAD
     sourceSets {
         main {
             res.srcDirs = [
                     'src/main/res/layouts/metro/group',
                     'src/main/res/layouts/metro/stantard',
+                    'src/main/res/layouts/metro/layout',
                     'src/main/res/layouts/metro',
                     'src/main/res/layouts/activity',
                     'src/main/res/layouts',
                     'src/main/res']
-=======
-
-    sourceSets {
-        main {
-            res.srcDirs =
-                    [
-                            'src/main/res/layouts/div1',
-                            'src/main/res/layouts/div2',
-                            'src/main/res/layouts/div3',
-                            'src/main/res/layouts',
-                            'src/main/res'
-                    ]
->>>>>>> ffa1a3c20511e6e345bf5328726c27d87aff4d05
         }
     }
 }

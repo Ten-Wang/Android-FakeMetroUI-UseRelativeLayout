@@ -12,7 +12,7 @@ import taiwan.myapplication.lib.ViewItem;
 /**
  * Created by TenWang on 2016/4/15.
  */
-public class sample extends HomeFragmentMetro {
+public class Sample extends HomeFragmentMetro {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View metroFragment = super.onCreateView(inflater, container, savedInstanceState);
