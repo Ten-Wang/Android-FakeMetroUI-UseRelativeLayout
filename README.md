@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/Ten-Wang/Android-FakeMetroUI-UseRelativeLayout"><img src="https://codeclimate.com/github/Ten-Wang/Android-FakeMetroUI-UseRelativeLayout/badges/issue_count.svg" /></a>
+
 # Android-FakeMetroUI-UseRelativeLayout
 like iOS UIColection, windows MetroUI.
 
